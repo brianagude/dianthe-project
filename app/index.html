@@ -1,31 +1,113 @@
-<!DOCTYPE html>
-  <head>
-    <title>Gulp Template</title>
+<!DOCTYPE html lang="en-us">
 
-    <!-- default meta tags -->
-    <meta charset="UTF-8">
-    <meta name="description" content="Base boilerplate for creating static websites using gulp">
-    <meta name="keywords" content="gulp, boilerplate">
-    <meta name="author" content="briana gude">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <title>the Dianthe Project</title>
 
-    <!-- twitter meta tags -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@brianagude" />
-    <meta name="twitter:creator" content="@brianagude" />
-    <meta property="og:url" content="https://brianagude.com/" />
-    <meta property="og:title" content="Gulp Template" />
-    <meta property="og:description" content="Base boilerplate for creating static websites using gulp" />
-    <meta property="og:image" content="./img/logo.svg" />
+  <!-- default meta tags -->
+  <meta charset="UTF-8">
+  <meta name="description" content="We create eCommerce stores for womxn-led small businesses.">
+  <meta name="keywords" content="shopify template, shopify, small-business, woman led startups, startup">
+  <meta name="author" content="briana gude">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- styles etc. -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
-  </head>
+  <!-- twitter meta tags -->
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://brianagude.com/" />
+  <meta property="og:title" content="the Dianthe Project" />
+  <meta property="og:description" content="We create eCommerce stores for womxn-led small businesses." />
+  <meta property="og:image" content="./favicons/social.jpg" />
 
-  <body class='homepage'>
-   <h2>hello briana</h2>
+  <!-- styles etc. -->
+  <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
+    integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/style.css">
 
-    <script src='./js/global.js'></script>
-  </body>
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+  <link rel="icon" type="image/x-icon" href="./favicons/favicon.ico">
+  <link rel="manifest" href="./favicons/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#fdfbf7">
+  <meta name="theme-color" content="#fdfbf7">
+  <meta name="theme-color" content="#fdfbf7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#fdfbf7" media="(prefers-color-scheme: dark)">
+</head>
+
+<body class='homepage'>
+  <div class="navigation">
+    <nav class="header-nav">
+      <a href="https://www.instagram.com/thediantheproject/">Follow</a>
+      <a href="mailto:hello@thediantheproject.com">Contact</a>
+      <a href="#">Donate</a>
+      <div class="animation start-home"></div>
+    </nav>
+  </div>
+  <div class="toggle">
+    <input type="checkbox" id="checkbox" checked />
+    <label></label>
+  </div>
+
+  <main id="mainContent">
+    <div class="typing-container show" id="typingText">
+      <div class="text-wrapper">
+        <span id="sentence" class="sentence"></span>
+        <span class="input-cursor"></span>
+      </div>
+    </div>
+
+    <div class="text-container" id="staticText">
+      <div class="text-wrapper">
+        <h5><b>You have reached <span class="text-primary">the Dianthe Project</span>.</b></h5>
+        <p class="text-blue-light small"><b>( pronounced dye / ANN / thee )</b></p>
+      </div>
+      <div class="text-wrapper">
+        <p>We are a non-profit organization that inspires, supports, and trains single black mothers living on the margins to
+        pursue professional and entrepreneurial careers in the tech industry.</p>
+        <!-- <p>We are committed to creating a safe space that inspires, supports, trains, and activates a talented pipeline of single -->
+        <!-- black mothers living below minimum wage to pursue professional and entrepreneurial careers in the tech industry.</p> -->
+      </div>
+      <div class="text-wrapper">
+        <p class="text-tertiary">This summer, we will be opening our doors to moms in Atlanta, GA.</p>
+        <p>Please join our mailing list or follow us on Instagram to learn more.</p>
+      </div>
+    </div>
+
+    <!-- Begin Mailchimp Signup Form -->
+    <div id="mc_embed_signup" class="mailchimp-form">
+      <form
+        action="https://studio.us12.list-manage.com/subscribe/post?u=905a4cc0ce0602d1c8a49b155&amp;id=b47929e338&amp;f_id=005fbce0f0"
+        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self">
+        <div id="mc_embed_signup_scroll">
+          <div class="mc-field-group">
+            <label for="mce-EMAIL" class="visually-hidden">Email Address <span class="asterisk">*</span></label>
+            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"
+              placeholder="Join Our Email List" required />
+            <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+          </div>
+    
+          <div id="mce-responses" class="clear foot visually-hidden">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+          </div>
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true">
+            <input type="text" name="b_905a4cc0ce0602d1c8a49b155_b47929e338" tabindex="-1" value="">
+          </div>
+          <div class="optionalParent">
+            <div class="clear foot">
+              <input type="submit" value="Subscribe" name="Subscribe" id="mc-embedded-subscribe" class="btn-submit" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <!--End mc_embed_signup-->
+  </main>
+
+
+  <script src='./js/global.js'></script>
+</body>
+
 </html>
