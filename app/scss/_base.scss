@@ -112,6 +112,11 @@ body {
   font-size: 1em;
 }
 
+html {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
 button {
   background: none;
   border: none; 
