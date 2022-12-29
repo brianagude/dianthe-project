@@ -135,7 +135,7 @@ nav {
 .mailchimp-form {
   position: absolute;
   z-index: 100;
-  bottom: calc(8rem + env(safe-area-inset-bottom));
+  // bottom: calc(8rem + env(safe-area-inset-bottom));
   left: 16px;
   width: 100%;
   max-width: calc(100vw - 32px);
@@ -175,7 +175,6 @@ nav {
       text-transform: lowercase;
       color: $black;
       text-align: left;
-      // padding: 8px 16px;
       width: 100%;
       border-radius: 8px;
       min-height: 32px;
@@ -196,8 +195,6 @@ nav {
       padding: 8px 12px;
       border-radius: 8px;
       -webkit-border-radius: 8px;
-      // height: 100%;
-      // width: 100%;
       min-height: 32px;
 
       @include bp(mobile-only){ width: 100%; }
