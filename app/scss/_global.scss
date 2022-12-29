@@ -52,16 +52,25 @@ header {
   left: 0;
   width: 100%;
   z-index: 10;
-
   padding: 16px 0;
   @include bp(sm){ padding: 24px 0; }
 
   .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    
     padding: 0 16px;
     max-width: 1920px;
     margin: 0 auto;
+
+    @include bp(xs){
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
     @include bp(sm){ padding: 0 24px; }
   }
 }
