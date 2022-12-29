@@ -61,6 +61,7 @@ header {
     justify-content: space-between;
     padding: 0 16px;
     max-width: 1920px;
+    margin: 0 auto;
     @include bp(sm){ padding: 0 24px; }
   }
 }
@@ -75,13 +76,12 @@ footer {
     flex-direction: column;
     gap: 8px;
     max-width: 1920px;
+    margin: 0 auto;
     @include bp(sm){ padding: 0 24px; }
   }
 
   .copyright {
     font-weight: 500;
-    // font-family: $font-primary;
-    // text-align: center;
     font-size: 14px;
   }
 }
@@ -93,6 +93,7 @@ footer {
   .container {
     padding: 0 16px;
     max-width: 1920px;
+    margin: 0 auto;
     @include bp(sm){ padding: 0 24px; }
   }
 }
