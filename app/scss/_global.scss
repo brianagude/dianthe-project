@@ -150,10 +150,18 @@ nav {
     background: $cream;
     border-radius: 8px;
     overflow: hidden;
+    padding: 8px;
 
     & > div { 
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      
+      align-items: center;
+
+      @include bp(xs){
+        grid-template-columns: 1fr auto;
+      }
     }
 
     input[type=email]{
@@ -167,9 +175,11 @@ nav {
       text-transform: lowercase;
       color: $black;
       text-align: left;
-      padding: 8px 16px;
+      // padding: 8px 16px;
       width: 100%;
       border-radius: 8px 0 0 8px;
+      min-height: 32px;
+      padding: 8px 4px;
 
       &:focus { background: $gray; }
     }
@@ -177,13 +187,19 @@ nav {
     input[type=submit]{
       background: $primary;
       border: none;
-      font-size: 16px;
+      font-family: $font-primary;
+      font-size: 18px;
       line-height: 1.5;
       letter-spacing: 0.015em;
       text-transform: lowercase;
       color: $white;
       padding: 8px 12px;
-      border-radius: 0;
+      border-radius: 8px !important;
+      // height: 100%;
+      // width: 100%;
+      min-height: 32px;
+
+      @include bp(mobile-only){ width: 100%; }
 
       &:hover { 
         cursor: pointer; 
