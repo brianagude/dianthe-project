@@ -127,7 +127,8 @@ nav {
       border-radius: 8px;
       width: fit-content;
 
-      & + a, & + button { margin-left: 8px; }
+      & + a, 
+      & + button { margin-left: 8px; }
     }
   }
 }
@@ -186,6 +187,7 @@ nav {
     }
 
     input[type=submit]{
+      -webkit-appearance: none;
       background: $primary;
       border: none;
       font-family: $font-primary;

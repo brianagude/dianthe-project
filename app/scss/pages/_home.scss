@@ -29,6 +29,8 @@ main {
   justify-content: center;
   align-items: center;
 
+  margin-top: -80px; 
+
   @include bp(sm){
     padding: 24px;
   }
