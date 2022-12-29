@@ -12,13 +12,11 @@ main {
   transition: all 0.5s ease;
   z-index: 1;
 
-  &.slide {
-    transform: translateX(-100vw);
-  }
+  &.slide { transform: translateX(-100vw); }
+}
 
-  // @include bp(small-only) {
-  //   margin-top: -24px;
-  // }
+.typing-container {
+  .text-wrapper { text-align: center; }
 }
 
 .typing-container,
@@ -35,7 +33,7 @@ main {
     padding: 24px;
   }
 
-  p {
+  p, .sentence {
     font-size: 1.25rem;
   }
 
@@ -86,11 +84,15 @@ main {
 
 .toggle {
   position: fixed;
-  top: 16px;
+  top: 72px;
   right: 16px;
   z-index: 10;
   box-sizing: border-box;
   width: fit-content;
+
+  @include bp(xs){
+    top: 16px;
+  }
 
   @include bp(sm){
     top: 24px;
