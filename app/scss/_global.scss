@@ -10,6 +10,11 @@ html {
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    main { transform: translateX(-100vw) !important; }
+    .toggle { display: none !important; }
+  }
 }
 
 *,
@@ -40,6 +45,7 @@ body {
   min-height: 100vh;
 
   overflow: hidden;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .visually-hidden {
@@ -55,13 +61,13 @@ body {
 .navigation {
   position: fixed;
   top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 16px;
   width: fit-content;
   z-index: 100;
 
   @include bp(sm){
     top: 24px;
+    left: 24px;
   }
 }
 
@@ -81,7 +87,10 @@ nav {
     transition: all .5s ease 0s;
     opacity: 0;
     width: 96px;
-    // transform: translateX(-50%);
+
+    @media (hover: none) {
+      display: none !important;
+    }
   }
 
   a {
@@ -111,12 +120,22 @@ nav {
     &:nth-child(1):hover~.animation { left: 0; }
     &:nth-child(2):hover~.animation { left: 96px; }
     &:nth-child(3):hover~.animation { left: 192px; }
+
+    @media (hover: none) {
+      padding: 8px 12px;
+      background: #F4E9D7;
+      border-radius: 8px;
+      width: fit-content;
+
+      & + a { margin-left: 8px; }
+    }
   }
 }
 
 .mailchimp-form {
   position: absolute;
-  bottom: 16px;
+  z-index: 100;
+  bottom: calc(6rem + env(safe-area-inset-bottom));
   left: 16px;
   width: 100%;
   max-width: calc(100vw - 32px);
@@ -130,7 +149,6 @@ nav {
   form {
     background: $cream;
     border-radius: 8px;
-    // display: flex;
     overflow: hidden;
 
     & > div { 
@@ -147,15 +165,13 @@ nav {
       line-height: 1.5;
       letter-spacing: 0.015em;
       text-transform: lowercase;
-      color: #120F02;
+      color: $black;
       text-align: left;
       padding: 8px 16px;
       width: 100%;
       border-radius: 8px 0 0 8px;
 
-      &:focus {
-        background: $gray;
-      }
+      &:focus { background: $gray; }
     }
 
     input[type=submit]{
@@ -165,9 +181,10 @@ nav {
       line-height: 1.5;
       letter-spacing: 0.015em;
       text-transform: lowercase;
-      color: #FDFBF7;
+      color: $white;
       padding: 8px 12px;
-      border-radius: 0 8px 8px 0;
+      // border-radius: 0 8px 8px 0;
+      border-radius: 0;
 
       &:hover { 
         cursor: pointer; 
