@@ -33,7 +33,7 @@ main {
     padding: 24px;
   }
 
-  p {
+  p, .sentence {
     font-size: 1.25rem;
   }
 
@@ -49,7 +49,6 @@ main {
 
 .text-wrapper {
   max-width: 32rem;
-
 
   & + .text-wrapper {
     margin-top: 24px;
