@@ -17,6 +17,17 @@
   <meta property="og:description" content="We create eCommerce stores for womxn-led small businesses." />
   <meta property="og:image" content="./favicons/social.jpg" />
 
+  <!-- funraise -->
+  <script>
+    (function (f, u, n, r, a, i, s, e) { var data = { window: window, document: document, tag: "script", data: "funraise", orgId: f, uri: u, common: n, client: r, script: a }; var scripts; var funraiseScript; data.window[data.data] = data.window[data.data] || []; if (data.window[data.data].scriptIsLoading || data.window[data.data].scriptIsLoaded) return; data.window[data.data].loading = true; data.window[data.data].push("init", data); scripts = data.document.getElementsByTagName(data.tag)[0]; funraiseScript = data.document.createElement(data.tag); funraiseScript.async = true; funraiseScript.src = data.uri + data.common + data.script + "?orgId=" + data.orgId; scripts.parentNode.insertBefore(funraiseScript, scripts) })('3b9f5dd9-6a47-4827-a65e-0e0e8e97fb18', 'https://assets.funraise.io', '/widget/common/2.0', '/widget/client', '/inject-form.js');
+  </script>
+
+  <script>
+    window.funraise.push('create', { form: 28556 });
+  </script>
+
+
+
   <!-- styles etc. -->
   <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
     integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
@@ -39,7 +50,8 @@
     <nav class="header-nav">
       <a href="https://www.instagram.com/thediantheproject/">Follow</a>
       <a href="mailto:hello@thediantheproject.com">Contact</a>
-      <a href="#">Donate</a>
+      <button type="button" aria-label="Donate" data-formId="28556">Donate</button>
+
       <div class="animation start-home"></div>
     </nav>
   </div>
