@@ -1,39 +1,52 @@
-main {
+/* STYLES SPECIFIC TO THE HOME PAGE */
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+
+  @include bp(small-only){
+    &.safari {
+      padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+    }
+
+    &.chrome {
+      padding-bottom: 7rem;
+    }
+  }
+}
+
+.main-content {
+  width: 100vw;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 200vw;
-  overflow: scroll;
+  flex-direction: column;
 
-  position: fixed;
-  top: 0;
-  left: 0;
-  transition: all 0.5s ease;
-  z-index: 1;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    width: 200vw;
+    height: 100%;
+    transition: all 0.5s ease;
+    max-width: initial;
+  }
 
-  &.slide { transform: translateX(-100vw); }
+  &.slide {
+    transform: translateX(-100vw);
+  }
 }
 
 .typing-container {
-  .text-wrapper { text-align: center; }
+  .text-wrapper {
+    text-align: center;
+  }
 }
 
 .typing-container,
 .text-container {
-  width: 100vw;
-  padding: 16px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  @include bp(sm){
-    padding: 24px;
-  }
-
-  p, .sentence {
+  p,
+  .sentence {
     font-size: 1.25rem;
   }
 
@@ -42,15 +55,16 @@ main {
     margin-top: 0.25rem;
   }
 
-  p + p {
+  p+p {
     margin-top: 0.5rem;
   }
 }
 
 .text-wrapper {
   max-width: 32rem;
+  margin: 0 auto; 
 
-  & + .text-wrapper {
+  &+.text-wrapper {
     margin-top: 24px;
   }
 }
@@ -82,21 +96,125 @@ main {
   transform: translateY(0.25rem);
 }
 
+.fr_funraise.fr_toast {
+  pointer-events: none !important;
+}
+
+.mailchimp-form {
+  width: 100%;
+
+  @include bp(sm) {
+    max-width: 420px;
+  }
+
+  form {
+    background: $cream;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 8px;
+
+    &>div {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+
+      align-items: center;
+
+      @include bp(xs) {
+        grid-template-columns: 1fr auto;
+      }
+    }
+
+    input[type=email] {
+      background: transparent;
+      border: none;
+      font-weight: 400;
+      font-family: $font-primary;
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: 0.015em;
+      text-transform: lowercase;
+      color: $black;
+      text-align: left;
+      width: 100%;
+      border-radius: 8px;
+      min-height: 32px;
+      padding: 8px 4px;
+
+      &:focus {
+        background: $gray;
+      }
+    }
+
+    input[type=submit] {
+      -webkit-appearance: none;
+      background: $primary;
+      border: none;
+      font-family: $font-primary;
+      font-size: 18px;
+      line-height: 1.5;
+      letter-spacing: 0.015em;
+      text-transform: lowercase;
+      color: $white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      min-height: 32px;
+
+      @include bp(mobile-only) {
+        width: 100%;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: $primary-light;
+      }
+    }
+  }
+}
+
 .toggle {
-  position: fixed;
-  top: 72px;
-  right: 16px;
-  z-index: 10;
+  position: relative;
+  height: 32px;
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
   width: fit-content;
 
-  @include bp(xs){
-    top: 16px;
-  }
+  label {
+    position: relative;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    box-sizing: border-box;
 
-  @include bp(sm){
-    top: 24px;
-    right: 24px;
+    &:before {
+      content: '';
+      background: $gray;
+      height: 32px;
+      width: 64px;
+      position: relative;
+      display: inline-block;
+      border-radius: 16px;
+      box-sizing: border-box;
+      transition: .5s cubic-bezier(0.52, -0.41, 0.55, 1.46);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 24px;
+      height: 24px;
+      border-radius: 16px;
+      z-index: 2;
+      box-sizing: border-box;
+      background: $black;
+      border-left: 0.07em solid #120f0280;
+      border-bottom: 0.07em solid #120f0280;
+      transition: .5s cubic-bezier(0.52, -0.41, 0.55, 1.46);
+    }
   }
 
   input[type="checkbox"] {
@@ -109,59 +227,16 @@ main {
     cursor: pointer;
     opacity: 0;
 
-    &:hover {
-      cursor: pointer;
-    }
-
     &:checked+label:before {
-      background: #e3b72280;
+      background: #e3b72250;
     }
 
     &:checked+label:after {
       background: $tertiary;
       border-left: none;
-      border-right: 0.07em solid #e3b72260;
-      border-bottom: 0.07em solid #e3b72260;
-      // box-shadow: 0 0.16em 0.01em #167e4c, 0 0.12em 0.3em rgba(22, 126, 76, 0.6), 0 0.12em 2em rgba(0, 0, 0, 0.3), -0.12em 0.15em 0.2em rgba(0, 0, 0, 0.2);
-      left: 28px;
-    }
-  }
-
-  label {
-    position: relative;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    box-sizing: border-box;
-
-    &:before {
-      content: '';
-      background: $gray;
-      height: 24px;
-      width: 48px;
-      position: relative;
-      display: inline-block;
-      border-radius: 16px;
-      // box-shadow: inset 0 0.1em 0.03em #120f0220, inset 0 0.1em 0.3em #120f0230, 0 0 2em #fdfbf760;
-      box-sizing: border-box;
-      transition: .5s cubic-bezier(0.52, -0.41, 0.55, 1.46);
-    }
-
-    &:after {
-      content: '';
-      position: absolute;
-      top: 4px;
-      left: 4px;
-      width: 16px;
-      height: 16px;
-      border-radius: 16px;
-      z-index: 2;
-      box-sizing: border-box;
-      background: $black;
-      border-left: 0.07em solid $black;
-      border-bottom: 0.07em solid $black;
-      // box-shadow: 0 0.16em 0.01em #343131, 0 0.12em 0.3em rgba(52, 49, 49, 0.6), 0 0.12em 2em rgba(0, 0, 0, 0.3), 0.12em 0.15em 0.2em rgba(0, 0, 0, 0.2);
-      transition: .5s cubic-bezier(0.52, -0.41, 0.55, 1.46);
+      border-right: 0.07em solid #e3b72280;
+      border-bottom: 0.07em solid #e3b72280;
+      left: 36px;
     }
   }
 }
