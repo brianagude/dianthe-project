@@ -1,0 +1,15 @@
+.linktree-page {
+  header {
+    .container { align-items: center; }
+    img { max-width: 80px; }
+  }
+
+  nav {
+    // padding: 16px;
+    // max-width: 768px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+  }
+}

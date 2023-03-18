@@ -10,9 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // CAROUSEL TEXT ==============================================================
   const carouselText = [
-    {text: "You have reached the Dianthe Project.", color: "#be4310"},
+    {text: "Welcome to the Dianthe Project!", color: "#be4310"},
     {text: "( pronounced dye / ANN / thee )", color: "#82b8d4"},
-    {text: "We are a non-profit organization that inspires, supports, and trains single black mothers living on the margins to pursue professional and entrepreneurial careers in the tech industry.", color: "#120f02"},
+    {text: "Our mission is to provide single mothers that are living on the margins with the resources, training, and support they need to pursue careers in the tech industry. ", color: "#120f02"},
+    {text: "We believe that by empowering these women to acquire in-demand skills and secure stable, well-paying jobs, we can help them build a brighter future for themselves and their families.", color: "#120f02"},
     {text: "This summer, we will be opening our doors to moms in Atlanta, GA.", color: "#e3b722"},
     {text: "Please join our mailing list or follow us on Instagram to learn more.", color: "#120f02"}
   ]
@@ -63,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   carousel(carouselText, '#sentence')
 
-    // DETECT WHICH BROWSER IS BEING USED ================================
+  // DETECT WHICH BROWSER IS BEING USED ================================
   function fnBrowserDetect(){
     let userAgent = navigator.userAgent;
     let browserName;
